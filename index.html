@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+<link rel="icon" type="image/png" href="logo.png">
+  <title>Cloud Nest  - your files anywhere!</title>
+</head>
+
+<body>
+
+<header class="pane top">
+  <h2>CLOUD NEST  - your files anywhere!</h2>
+</header>
+
+<div class="container">
+  <div class="pane bottom">
+
+    <!-- LEFT SIDE -->
+    <div class="pane left">
+      <h2>Share Files</h2>
+
+      <label class="upload-area">
+        + Upload file 
+        <input type="file" id="fileInput" hidden />
+      </label>
+
+      <div class="code-box" id="codeBox">
+      <button class="get-code" onclick="uploadFile()">upload & get code</button>
+        <p class="unique-code">Your code will appear here</p>
+      </div>
+    </div>
+<!--  -->
+    <!-- RIGHT SIDE -->
+    <div class="pane right">
+      <h2>Receive Files</h2>
+
+      <div class="input-container">
+        <p name="code">Input your code:</p>
+        <input class="code-fetch" type="text" placeholder="Enter code here" />
+        <button class="fetch-file" onclick="fetchFile()">Fetch File</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<video autoplay muted loop id="bg-video">
+  <source src="backgroundPlayback.mp4" type="video/mp4">
+</video>
+
+
+<footer class="footer">
+  <h4>made by Gautam</h4>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
