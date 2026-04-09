@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const multer = require("multer");
 const fs = require("fs-extra");
-
+const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
 
@@ -66,6 +66,11 @@ app.get("/download/:code", (req, res) => {
   res.download(filepath);
 });
 
-app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
+
+
+app.use(express.static(__dirname));

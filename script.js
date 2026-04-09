@@ -1,5 +1,5 @@
 let selectedFile = null;
-
+const BASE_URL = "https://cloudnest.onrender.com";
 // 1️⃣ First: just store the file when user selects it
 document.getElementById("fileInput").addEventListener("change", function () {
   if (this.files.length > 0) {
@@ -23,7 +23,7 @@ async function uploadFile() {
   try {
     document.querySelector(".unique-code").innerText = "Uploading...";
 
-    const response = await fetch("http://localhost:3000/upload", {
+    const response = await fetch(`${BASE_URL}/upload`, {
       method: "POST",
       body: formData
     });
@@ -50,7 +50,7 @@ function fetchFile() {
     alert("Enter a code to fetch the file");
     return;
   }
-  window.location.href = `http://localhost:3000/download/${code}`;
+  window.location.href = `${BASE_URL}/download/${code}`;
   
 }
 // Optional copy button
